@@ -38,7 +38,6 @@ const SearchBar = ( props ) => {
                     <option value="MAD">Madrid</option>
                     <option value="MXP">Milan</option>
                     <option value="ATH">Athens</option>
-                    <option value="ZXCV">zxcv</option>
                 </select>
             </FormGroup>
             <FormGroup style={{ margin: "0.5rem" }}>

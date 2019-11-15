@@ -13,14 +13,6 @@ const App = props => {
   const [error, setError] = useState( '' )
 
   useEffect( () => {
-    /* const callAPI = async () => {
-      const result = await fetch( url )
-      const data = await result.json()
-      setFlightList(
-        data.data
-      )
-    } */
-
     try {
       callAPI();
     } catch ( err ) {
@@ -32,33 +24,35 @@ const App = props => {
   }, [] );
 
 
-
   const callAPI = async () => {
-    const result = await fetch( url )
-    const data = await result.json()
-    setFlightList(
-      data.data
-    )
-
-    if ( data.error ) {
-      setError( data.error.message )
-        .catch( err => {
-          console.log( err )
-        } )
+    try {
+      const result = await fetch( url )
+      const data = await result.json()
+      console.log( 'fetch data', data );
+      setFlightList(
+        data.data
+      )
+    } catch ( e ) {
+      setFlightList( [] );
+      console.error( 'call api', e );
     }
+
+
   }
 
 
   //console.log( flightList )
 
-  let loadingStatus = 'Loading...';
+  const loadingStatus = 'Loading...';
 
   if ( !loading ) {
     content = flightList;
   }
 
-  useState( () => {
-  }, [flightList] )
+  useEffect( () => {
+    console.log( 'calling', url );
+    callAPI();
+  }, [url] )
 
   return (
     <>
