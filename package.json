@@ -36,6 +36,7 @@
     "luxon": "^1.21.1",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
+    "react-router-dom": "^5.1.2",
     "reactstrap": "^8.1.1"
   }
 }
