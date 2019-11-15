@@ -17,7 +17,7 @@ const FlightResultsContainer = ( props ) => {
 
 
     if ( !loadingStatus ) {
-        console.log( 'propsflightdata', flightData )
+        //console.log( 'propsflightdata', flightData )
         content = flightData.map( ( elem, index ) => (
             <div style={{ margin: "1rem" }}>
                 <Card>
